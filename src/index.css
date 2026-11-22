@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/fonts/Cairo-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("/fonts/Cairo-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Same palette as the app (lib/core/theme/app_theme.dart) and its logo. */
+@theme {
+  --font-sans: "Cairo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-navy-950: #040c2b;
+  --color-navy-900: #061440;
+  --color-navy-800: #0a1f5c;
+  --color-navy-700: #10297a;
+  --color-sky-glow: #22d3ee;
+  --color-mint: #34d399;
+  --color-ink: #1e293b;
+  --color-muted: #64748b;
+  --color-canvas: #f8fafc;
+  --color-success: #10b981;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Faint grid behind the dark hero, echoing the logo's tech look. */
+.hero-grid {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}

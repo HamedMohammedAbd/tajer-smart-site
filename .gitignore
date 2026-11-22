@@ -1,0 +1,6 @@
+node_modules
+dist
+.vercel
+# The app files are large binaries: host them outside git (see README).
+public/downloads/*.apk
+*.tsbuildinfo
