@@ -44,13 +44,17 @@ git push -u origin main
 
 المستودع يجب أن يكون عاماً، وإلا لن يتمكن الزوار من التحميل.
 
-### 3. Vercel
+### 3. نشر الموقع (GitHub Pages)
 
-1. **Add New → Project** واختر المستودع `tajer-smart-site`.
-2. الإعدادات تُكتشف تلقائياً: Framework `Vite`، Build `npm run build`، Output `dist`.
-3. **Deploy**.
+في المستودع: **Settings → Pages → Source: GitHub Actions**.
+الملف `.github/workflows/pages.yml` يبني الموقع وينشره مع كل `git push` على `main`، على الرابط:
+`https://hamedmohammedabd.github.io/tajer-smart-site/`
 
-كل `git push` بعدها ينشر الموقع تلقائياً.
+### بديل: Vercel
+
+1. **Add New → Project** واختر المستودع.
+2. الإعدادات تُكتشف تلقائياً (Vite، `npm run build`، `dist`).
+3. **Deploy**. على Vercel يعمل الموقع من الجذر `/` تلقائياً، و`vercel.json` يضيف ترويسات الأمان.
 
 ## تحديث التطبيق لاحقاً
 
@@ -63,4 +67,5 @@ git push -u origin main
 - `src/data.ts`: نصوص المميزات والأسئلة (مأخوذة من أقسام التطبيق الحقيقية).
 - `src/App.tsx`: أقسام الصفحة، و`src/components/PhoneMock.tsx` محاكاة شاشة التطبيق.
 - `src/index.css`: الألوان والخط (نفس ألوان `app_theme.dart` في التطبيق).
-- `vercel.json`: ترويسات الأمان وتخزين الخطوط والصور.
+- `vite.config.ts`: المسار الأساسي (`SITE_BASE`) ورابط الموقع لمعاينة الروابط (`SITE_URL`)، ويمرّرهما ملف النشر.
+- `vercel.json`: ترويسات الأمان وتخزين الخطوط والصور (على Vercel فقط).

@@ -18,7 +18,7 @@ import {
   WifiOff,
   X,
 } from 'lucide-react';
-import { site } from './config';
+import { asset, site } from './config';
 import { faqs, features, highlights, steps } from './data';
 import { PhoneMock } from './components/PhoneMock';
 import { DownloadButtons } from './components/DownloadButtons';
@@ -33,7 +33,7 @@ const nav = [
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <a href="#top" className="flex items-center gap-2.5" aria-label={site.nameAr}>
-      <img src="/logo.png" alt="" width={40} height={40} className="h-10 w-10 rounded-xl" />
+      <img src={asset('logo.png')} alt="" width={40} height={40} className="h-10 w-10 rounded-xl" />
       <span className="flex flex-col leading-tight">
         <span className={`text-lg font-bold ${light ? 'text-white' : 'text-ink'}`}>{site.nameAr}</span>
         <span className={`text-[11px] tracking-wide ${light ? 'text-white/60' : 'text-muted'}`} dir="ltr">
@@ -356,7 +356,7 @@ function DownloadSection() {
         <div className="hero-grid pointer-events-none absolute inset-0" />
         <div className="relative grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
           <div>
-            <img src="/logo.png" alt="" width={72} height={72} className="h-[72px] w-[72px] rounded-2xl shadow-lg shadow-black/30" />
+            <img src={asset('logo.png')} alt="" width={72} height={72} className="h-[72px] w-[72px] rounded-2xl shadow-lg shadow-black/30" />
             <h2 className="mt-6 text-3xl font-bold leading-[1.4] sm:text-4xl">حمّل {site.nameAr} الآن</h2>
             <p className="mt-3 text-lg leading-8 text-white/75">
               ابدأ البيع من جوالك اليوم. التطبيق يعمل على أجهزة أندرويد {site.minAndroid} فأعلى.

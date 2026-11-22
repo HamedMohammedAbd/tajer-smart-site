@@ -1,4 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
+import { asset } from './config';
 import {
   ChartLine,
   Clock,
@@ -48,21 +49,21 @@ export type Highlight = {
 
 export const highlights: Highlight[] = [
   {
-    image: '/images/sync_pos.jpg',
+    image: asset('images/sync_pos.jpg'),
     eyebrow: 'الكاشير',
     title: 'بيع أسرع، وفواتير مرتبة',
     text: 'كل فاتورة لها رقم خاص بها يظهر على الإيصال كما هو في السجل، سواء بعت والإنترنت متصل أو مقطوع.',
     points: ['مسح الباركود بكاميرا الجوال', 'بيع نقدي أو آجل على حساب العميل', 'مرتجعات نقداً أو خصماً من الدين', 'طباعة الفواتير'],
   },
   {
-    image: '/images/sync_inventory.jpg',
+    image: asset('images/sync_inventory.jpg'),
     eyebrow: 'المخزون والمشتريات',
     title: 'مخزونك تحت السيطرة',
     text: 'الكميات تتحدّث تلقائياً مع كل بيع ومرتجع وفاتورة شراء، فتعرف دائماً ما عندك وما تحتاج طلبه.',
     points: ['منتجات بمتغيّرات (مقاسات، ألوان، أوزان)', 'فواتير شراء وسندات صرف للموردين', 'رصيد لكل مورد يطابق كشف حسابه', 'حركات المخزن بالتفصيل'],
   },
   {
-    image: '/images/sync_reports.jpg',
+    image: asset('images/sync_reports.jpg'),
     eyebrow: 'الأرباح والتقارير',
     title: 'اعرف ربحك الحقيقي',
     text: 'لا يكفي أن تعرف كم بعت. تاجر سمارت يحسب تكلفة البضاعة والمصاريف ليعطيك صافي الربح.',

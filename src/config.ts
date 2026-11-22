@@ -9,7 +9,12 @@ export const releasesRepo = 'HamedMohammedAbd/tajer-smart-site';
  * as the files keep the same names.
  */
 const apkUrl = (file: string) =>
-  import.meta.env.DEV ? `/downloads/${file}` : `https://github.com/${releasesRepo}/releases/latest/download/${file}`;
+  import.meta.env.DEV
+    ? asset(`downloads/${file}`)
+    : `https://github.com/${releasesRepo}/releases/latest/download/${file}`;
+
+/** A file from public/, wherever the site is served from (/ or /<repo>/). */
+export const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 export const site = {
   nameAr: 'تاجر سمارت',
