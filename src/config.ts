@@ -23,7 +23,7 @@ export const site = {
   minAndroid: '7.0',
   downloads: {
     android64: { url: apkUrl('tajer-smart-arm64.apk'), size: '41 MB' },
-    android32: { url: apkUrl('tajer-smart-armv7.apk'), size: '36 MB' },
+    android32: { url: apkUrl('tajer-smart-armv7.apk'), size: '37 MB' },
     // Shown only when set, e.g. https://play.google.com/store/apps/details?id=com.hamed.saaspos
     playStore: '',
   },
